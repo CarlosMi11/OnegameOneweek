@@ -1,11 +1,10 @@
-[gd_scene load_steps=13 format=4 uid="uid://dkel7e1n8he18"]
+[gd_scene load_steps=12 format=4 uid="uid://dkel7e1n8he18"]
 
 [ext_resource type="Script" uid="uid://b1arny45lagny" path="res://scripts/juego.gd" id="1_ebtnq"]
 [ext_resource type="Texture2D" uid="uid://c6waxol38armp" path="res://sprites/tiles_datas.png" id="1_iq6uk"]
 [ext_resource type="Texture2D" uid="uid://dl7fts0on1sau" path="res://sprites/bitTower/Tilemap_color1.png" id="3_5g1u2"]
 [ext_resource type="Script" uid="uid://bdnrx0dfscirs" path="res://scripts/values_map_astar.gd" id="3_ebtnq"]
 [ext_resource type="Script" uid="uid://2crjg4mwsea1" path="res://scripts/camera_principal.gd" id="3_iq6uk"]
-[ext_resource type="PackedScene" uid="uid://c47oyuicq4a6m" path="res://scenes/EnemyManager.tscn" id="3_mlgrx"]
 [ext_resource type="PackedScene" uid="uid://doqgh1qtmgrhc" path="res://scenes/enemySpawner.tscn" id="6_5g1u2"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_3gj6n"]
@@ -394,8 +393,6 @@ script = ExtResource("1_ebtnq")
 [node name="Spawner" parent="Enemigos" instance=ExtResource("6_5g1u2")]
 position = Vector2(-382, -252)
 
-[node name="EnemyManager" parent="Enemigos" instance=ExtResource("3_mlgrx")]
-
 [node name="Tilemap" type="Node" parent="."]
 
 [node name="TileMapLayer3" type="TileMapLayer" parent="Tilemap"]
@@ -418,7 +415,7 @@ navigation_enabled = false
 script = ExtResource("3_ebtnq")
 
 [node name="CameraPrincipal" type="Camera2D" parent="."]
-position = Vector2(34.999985, 222)
+position = Vector2(209, 259)
 scale = Vector2(-4.06128, -5.09552)
 limit_left = -700
 limit_top = -540
@@ -429,6 +426,7 @@ position_smoothing_speed = 8.0
 script = ExtResource("3_iq6uk")
 
 [node name="Timer" type="Timer" parent="."]
+wait_time = 3.801
 one_shot = true
 autostart = true
 
