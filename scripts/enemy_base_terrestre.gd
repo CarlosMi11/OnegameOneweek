@@ -1,9 +1,10 @@
 extends CharacterBody2D
 
 
-@export var velocidad = 120.0
+@export var velocidad = 80.0
 
-@onready var astarmap = $"../Tilemap/AstarTileMap"
+@onready var astarmap = $"/root/Juego/Tilemap/AstarTileMap"
+
 
 #variables default
 
@@ -36,6 +37,7 @@ func calcularRuta():
 	
 
 func _physics_process(delta):
+	
 	if ruta.is_empty():
 		calcularRuta()
 
@@ -50,7 +52,7 @@ func _physics_process(delta):
 	# 3. Calcular la dirección y velocidad
 	var direccion: Vector2 = position.direction_to(puntoObjetivo)
 	
-	velocity = (direccion) * velocidad * delta
+	velocity = (direccion) * velocidad 
 	
 	# 4. Verificar si llegó al punto actual 
 	

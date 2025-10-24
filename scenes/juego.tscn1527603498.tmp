@@ -417,11 +417,6 @@ sources/0 = SubResource("TileSetAtlasSource_5g1u2")
 [node name="Juego" type="Node2D"]
 script = ExtResource("1_ebtnq")
 
-[node name="Enemigos" type="Node" parent="."]
-
-[node name="Spawner" parent="Enemigos" instance=ExtResource("6_5g1u2")]
-position = Vector2(-382, -252)
-
 [node name="Tilemap" type="Node" parent="."]
 
 [node name="TileMapLayer3" type="TileMapLayer" parent="Tilemap"]
@@ -443,6 +438,11 @@ tile_set = SubResource("TileSet_mlgrx")
 navigation_enabled = false
 script = ExtResource("3_ebtnq")
 
+[node name="Enemigos" type="Node" parent="."]
+
+[node name="Spawner" parent="Enemigos" instance=ExtResource("6_5g1u2")]
+position = Vector2(-382, -252)
+
 [node name="CameraPrincipal" type="Camera2D" parent="."]
 position = Vector2(209, 259)
 scale = Vector2(-4.06128, -5.09552)
@@ -453,10 +453,3 @@ limit_bottom = 650
 position_smoothing_enabled = true
 position_smoothing_speed = 8.0
 script = ExtResource("3_iq6uk")
-
-[node name="Timer" type="Timer" parent="."]
-wait_time = 3.801
-one_shot = true
-autostart = true
-
-[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
