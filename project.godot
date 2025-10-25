@@ -11,8 +11,13 @@ config_version=5
 [application]
 
 config/name="OnegameOneweek"
+run/main_scene="uid://dkel7e1n8he18"
 config/features=PackedStringArray("4.5", "Forward Plus")
 config/icon="res://sprites/icon.svg"
+
+[global_group]
+
+enemies=""
 
 [input]
 
