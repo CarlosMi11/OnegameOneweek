@@ -418,7 +418,7 @@ navigation_enabled = false
 script = ExtResource("3_ebtnq")
 
 [node name="CameraPrincipal" type="Camera2D" parent="."]
-position = Vector2(34.999985, 222)
+position = Vector2(209, 259)
 scale = Vector2(-4.06128, -5.09552)
 limit_left = -700
 limit_top = -540

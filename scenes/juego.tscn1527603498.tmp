@@ -1,16 +1,16 @@
 [gd_scene load_steps=13 format=4 uid="uid://dkel7e1n8he18"]
 
+[ext_resource type="Texture2D" uid="uid://bw7ixrdash6c7" path="res://sprites/Tilemap_color1.png" id="1_2ka1k"]
 [ext_resource type="Script" uid="uid://b1arny45lagny" path="res://scripts/juego.gd" id="1_ebtnq"]
 [ext_resource type="Texture2D" uid="uid://c6waxol38armp" path="res://sprites/tiles_datas.png" id="1_iq6uk"]
 [ext_resource type="Texture2D" uid="uid://dl7fts0on1sau" path="res://sprites/bitTower/Tilemap_color1.png" id="3_5g1u2"]
 [ext_resource type="Script" uid="uid://bdnrx0dfscirs" path="res://scripts/values_map_astar.gd" id="3_ebtnq"]
 [ext_resource type="Script" uid="uid://2crjg4mwsea1" path="res://scripts/camera_principal.gd" id="3_iq6uk"]
-[ext_resource type="PackedScene" uid="uid://c47oyuicq4a6m" path="res://scenes/EnemyManager.tscn" id="3_mlgrx"]
 [ext_resource type="PackedScene" uid="uid://doqgh1qtmgrhc" path="res://scenes/enemySpawner.tscn" id="6_5g1u2"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_3gj6n"]
 resource_name = "TERRENO2"
-texture = ExtResource("3_5g1u2")
+texture = ExtResource("1_2ka1k")
 texture_region_size = Vector2i(64, 64)
 1:1/0 = 0
 1:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(30.75, -32.5, 28.25, -28.5, -26.75, -25.5, -29.75, 32, -32.75, 31, -32.25, -31.5)
@@ -72,6 +72,8 @@ texture_region_size = Vector2i(64, 64)
 6:5/0/physics_layer_0/polygon_1/points = PackedVector2Array(-31.7096, 32.5514, -32.832, -33.1126, -28.3422, -27.5003, -26.6585, 25.2554, 31.7095, 26.3779, 31.7095, 33.1126)
 6:4/0 = 0
 6:4/0/physics_layer_0/polygon_0/points = PackedVector2Array(-31.75, -32, 32.25, -32.5, 31.25, 32, -32.25, 31.5)
+6:3/0 = 0
+6:3/0/physics_layer_0/polygon_0/points = PackedVector2Array(-26.25, 26, 31.25, 28, 31.25, 33, -32.25, 33, -32.25, -31.5, -28.25, -31.5)
 6:2/0 = 0
 6:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-32.75, -32, -28.75, -32.5, -27.75, 35, -31.75, 31.5)
 6:1/0 = 0
@@ -177,7 +179,6 @@ texture_region_size = Vector2i(64, 64)
 18:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-32.75, -32, -28.25, -32.5, 28.75, 29, 28.75, 33.5)
 18:2/0 = 0
 18:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-31.9966, 19.799, -30.9359, -25.4558, 21.0364, 20.8597)
-6:3/0 = 0
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_rcm7p"]
 texture = ExtResource("3_5g1u2")
@@ -349,6 +350,33 @@ texture_region_size = Vector2i(64, 64)
 18:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-32.75, -32, -28.25, -32.5, 28.75, 29, 28.75, 33.5)
 18:2/0 = 0
 18:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-31.9966, 19.799, -30.9359, -25.4558, 21.0364, 20.8597)
+1:0/0 = 0
+2:0/0 = 0
+3:0/0 = 0
+4:0/0 = 0
+5:0/0 = 0
+6:0/0 = 0
+7:0/0 = 0
+8:0/0 = 0
+9:0/0 = 0
+10:0/0 = 0
+11:0/0 = 0
+12:0/0 = 0
+13:0/0 = 0
+14:0/0 = 0
+10:1/0 = 0
+10:2/0 = 0
+10:3/0 = 0
+5:4/0 = 0
+10:4/0 = 0
+1:7/0 = 0
+2:7/0 = 0
+3:7/0 = 0
+4:7/0 = 0
+6:7/0 = 0
+7:7/0 = 0
+8:7/0 = 0
+9:7/0 = 0
 
 [sub_resource type="TileSet" id="TileSet_ped1f"]
 physics_layer_0/collision_layer = 2
@@ -389,19 +417,12 @@ sources/0 = SubResource("TileSetAtlasSource_5g1u2")
 [node name="Juego" type="Node2D"]
 script = ExtResource("1_ebtnq")
 
-[node name="Enemigos" type="Node" parent="."]
-
-[node name="Spawner" parent="Enemigos" instance=ExtResource("6_5g1u2")]
-position = Vector2(-382, -252)
-
-[node name="EnemyManager" parent="Enemigos" instance=ExtResource("3_mlgrx")]
-
 [node name="Tilemap" type="Node" parent="."]
 
 [node name="TileMapLayer3" type="TileMapLayer" parent="Tilemap"]
 z_index = 1
 position = Vector2(-538, -405)
-tile_map_data = PackedByteArray("AAAHABYAAgAQAAEAAAAHABoAAgAQAAIAAAALABYAAgAMAAUAAAALABoAAgAHAAQAAAAPABYAAgAMAAUAAAAPABoAAgAHAAQAAAATABYAAgAIAAEAAAATABoAAgAGAAIAAAATAB4AAgAGAAMAAAATACIAAgAGAAQAAAAXABoAAgAIAAEAAAAXAB4AAgAIAAIAAAAXACIAAgAJAAIAAAAXACYAAgAGAAMAAAAXACoAAgALAAQAAAAbACYAAgASAAEAAAAbACoAAgASAAIAAABBAC8AAgANAAQAAAA9AC8AAgAMAAQAAAA9ACsAAgAMAAMAAAA5AC8AAgAMAAQAAABBACsAAgANAAMAAAA5ACsAAgAMAAMAAAA1AC8AAgANAAIAAAA1ADcAAgANAAQAAAAxADcAAgAMAAQAAAAtADcAAgALAAQAAAAtADMAAgALAAMAAAAtAC8AAgALAAIAAAAtACsAAgALAAIAAAAtACcAAgALAAEAAAAxACMAAgALAAIAAAAxAB8AAgALAAIAAAAxABsAAgALAAEAAAA1ABsAAgAMAAEAAAA1AB8AAgANAAIAAAA5ABsAAgASAAEAAAA5AB8AAgASAAIAAAA1ACMAAgANAAIAAAA5ACcAAgAMAAEAAAA9ACcAAgAMAAEAAABBACcAAgANAAEAAAAxADMAAgAMAAMAAAAxAC8AAgAMAAIAAAAxACsAAgAMAAIAAAAxACcAAgAMAAIAAAA1ACcAAgAMAAIAAAA1ACsAAgAMAAIAAAA1ADMAAgANAAMAAAAbABgAAgAJAAYAAAAbABQAAgAJAAUAAAANAB4AAgAJAAEAAAANACIAAgAJAAMAAAANACYAAgAJAAQAAAAhABsAAgAJAAQAAAAhABcAAgAJAAUAAAA=")
+tile_map_data = PackedByteArray("AAAHABYAAgAQAAEAAAAHABoAAgAQAAIAAAALABYAAgAMAAUAAAALABoAAgAHAAQAAAAPABYAAgAMAAUAAAAPABoAAgAHAAQAAAATABYAAgAIAAEAAAATABoAAgAGAAIAAAATAB4AAgAGAAMAAAATACIAAgAGAAQAAAAXABoAAgAIAAEAAAAXAB4AAgAIAAIAAAAXACIAAgAJAAIAAAAXACYAAgALAAMAAAAXACoAAgALAAQAAAAbACYAAgASAAEAAAAbACoAAgASAAIAAABBAC8AAgANAAQAAAA9AC8AAgAMAAQAAAA9ACsAAgAMAAMAAAA5AC8AAgAMAAQAAABBACsAAgANAAMAAAA5ACsAAgAMAAMAAAA1AC8AAgANAAIAAAA1ADcAAgANAAQAAAAxADcAAgAMAAQAAAAtADcAAgALAAQAAAAtADMAAgALAAMAAAAtAC8AAgALAAIAAAAtACsAAgALAAIAAAAtACcAAgALAAEAAAAxACMAAgALAAIAAAAxAB8AAgALAAIAAAAxABsAAgALAAEAAAA1ABsAAgAMAAEAAAA1AB8AAgANAAIAAAA5ABsAAgASAAEAAAA5AB8AAgASAAIAAAA1ACMAAgANAAIAAAA5ACcAAgAMAAEAAAA9ACcAAgAMAAEAAABBACcAAgANAAEAAAAxADMAAgAMAAMAAAAxAC8AAgAMAAIAAAAxACsAAgAMAAIAAAAxACcAAgAMAAIAAAA1ACcAAgAMAAIAAAA1ACsAAgAMAAIAAAA1ADMAAgANAAMAAAAbABgAAgAJAAYAAAAbABQAAgAJAAUAAAANAB4AAgAJAAEAAAANACIAAgAJAAMAAAANACYAAgAJAAQAAAAhABsAAgAJAAQAAAAhABcAAgAJAAUAAAA=")
 tile_set = SubResource("TileSet_ped1f")
 
 [node name="TileMapLayer" type="TileMapLayer" parent="Tilemap"]
@@ -417,8 +438,13 @@ tile_set = SubResource("TileSet_mlgrx")
 navigation_enabled = false
 script = ExtResource("3_ebtnq")
 
+[node name="Enemigos" type="Node" parent="."]
+
+[node name="Spawner" parent="Enemigos" instance=ExtResource("6_5g1u2")]
+position = Vector2(-382, -252)
+
 [node name="CameraPrincipal" type="Camera2D" parent="."]
-position = Vector2(34.999985, 222)
+position = Vector2(209, 259)
 scale = Vector2(-4.06128, -5.09552)
 limit_left = -700
 limit_top = -540
@@ -427,9 +453,3 @@ limit_bottom = 650
 position_smoothing_enabled = true
 position_smoothing_speed = 8.0
 script = ExtResource("3_iq6uk")
-
-[node name="Timer" type="Timer" parent="."]
-one_shot = true
-autostart = true
-
-[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
