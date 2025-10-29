@@ -1,3 +1,5 @@
+class_name EnemyBase
+
 extends CharacterBody2D
 
 
